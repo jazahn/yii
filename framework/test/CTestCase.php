@@ -9,7 +9,14 @@
  */
 
 require_once('PHPUnit/Runner/Version.php');
-require_once('PHPUnit/Autoload.php');
+// check version of phpunit
+if(PHPUnit_Runner_Version::id() == '3.4'){
+	require_once('PHPUnit/Framework.php');
+} else {
+	// this is what it normally is
+	require_once('PHPUnit/Autoload.php');
+}
+
 
 /**
  * CTestCase is the base class for all test case classes.
