@@ -117,4 +117,15 @@ abstract class CDbTestCase extends CTestCase
 		if(is_array($this->fixtures))
 			$this->getFixtureManager()->load($this->fixtures);
 	}
+	
+	/**
+	 * Has to be added to log sql in unit testing.
+	 * see: http://www.yiiframework.com/forum/index.php/topic/9924-logging-sql-queries-while-testing/
+	 */
+	public static function tearDownAfterClass()
+	{
+	    Yii::app()->onEndRequest(new CEvent(null));
+	}
+	
+	
 }
