@@ -8,7 +8,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-require_once('PHPUnit/Runner/Version.php');
+@require_once('PHPUnit/Runner/Version.php');
 // check version of phpunit
 if(@PHPUnit_Runner_Version::id() == '3.4'){
 	require_once('PHPUnit/Framework.php');
